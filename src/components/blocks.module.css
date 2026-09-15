@@ -1,0 +1,776 @@
+/* ==================================================================
+   Top band + card
+   ================================================================== */
+.band {
+  position: relative;
+}
+
+.bandBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bandImg {
+  object-fit: cover;
+  object-position: 50% 0;
+  opacity: 0.57;
+}
+
+.bandFade {
+  position: absolute;
+  inset: 0;
+}
+
+.bandInner {
+  position: relative;
+  z-index: 1;
+}
+
+.cardWrap {
+  container-type: inline-size;
+  margin-top: 34px;
+}
+
+.cardWrap[data-clip] {
+  aspect-ratio: 1360 / var(--visible);
+  overflow: hidden;
+}
+
+.card {
+  --u: calc(100cqw / 1360);
+  position: relative;
+  min-height: calc(var(--card-h) * var(--u));
+  border-radius: calc(25 * var(--u));
+  background: #fff;
+  overflow: hidden;
+}
+
+.texture {
+  position: absolute;
+  left: calc(-376 * var(--u));
+  top: calc(-742 * var(--u));
+  width: calc(1832 * var(--u));
+  height: calc(3125 * var(--u));
+  max-width: none;
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: calc(15 * var(--u));
+}
+
+/* ==================================================================
+   Spark title
+   ================================================================== */
+.sparkTitle {
+  position: relative;
+  padding: calc(101 * var(--u)) 0 0 calc(111 * var(--u));
+}
+
+.spark {
+  position: absolute;
+  left: calc(12.35 * var(--u));
+  top: calc(42.1 * var(--u));
+  width: calc(183.094 * var(--u));
+  height: calc(97.712 * var(--u));
+  transform: rotate(-33.64deg);
+}
+
+.sparkText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: calc(75 * var(--u));
+  line-height: 1.057;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.sparkText[data-wrap] {
+  white-space: normal;
+}
+
+/* ==================================================================
+   Buttons
+   ================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(286.157 * var(--u, 1px));
+  padding: calc(12.107 * var(--u, 1px)) calc(25.314 * var(--u, 1px));
+  border-radius: 999px;
+  background: var(--blue-bright);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: calc(20.824 * var(--u, 1px));
+  line-height: normal;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+.btnOutline {
+  background: transparent;
+  box-shadow: inset 0 0 0 3px #000;
+}
+
+.btnRed {
+  background: var(--red);
+  color: #fff;
+}
+
+.btnWide {
+  width: calc(395 * var(--u, 1px));
+}
+
+/* ==================================================================
+   Scenic section
+   ================================================================== */
+.scenic {
+  position: relative;
+  container-type: inline-size;
+}
+
+.scenicBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.scenicImgBox {
+  position: absolute;
+  left: var(--sx, 0);
+  top: var(--sy, 0);
+  width: var(--sw, 100%);
+  height: var(--sh, 100%);
+  opacity: 0.64;
+}
+
+.scenicImg {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.scenicFade {
+  position: absolute;
+  inset: 0;
+}
+
+.stripes {
+  --v: min(1px, 100cqw / 1440);
+  position: absolute;
+  left: calc(50% + (var(--stx) - 720) * var(--v));
+  top: calc(var(--sty) * var(--v));
+  width: calc(var(--stw) * var(--v));
+  height: calc(472 * var(--v));
+  max-width: none;
+}
+
+.scenicContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-top: var(--pt, 0px);
+}
+
+/* ==================================================================
+   Split card
+   ================================================================== */
+.splitWrap {
+  container-type: inline-size;
+  width: min(1218px, 100%);
+}
+
+.split {
+  --w: calc(100cqw / 1218);
+  display: flex;
+  height: calc(var(--sh) * var(--w));
+  filter: drop-shadow(10px 9px 0 rgba(0, 0, 0, 0.12));
+}
+
+.splitLeft {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(532 * var(--w));
+  border: calc(8 * var(--w)) solid var(--bl);
+  border-right: 0;
+  border-radius: calc(25 * var(--w)) 0 0 calc(25 * var(--w));
+  overflow: hidden;
+  background: #fff;
+}
+
+.splitPhoto {
+  object-fit: cover;
+}
+
+.splitBlock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(20 * var(--w)) calc(47.4 * var(--w));
+}
+
+.splitBlockImg {
+  object-fit: cover;
+}
+
+.splitBlockTitle {
+  position: relative;
+  max-width: calc(510 * var(--w));
+  font-size: calc(45.887 * var(--w));
+  line-height: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.splitBlockTitleDark {
+  color: var(--ink);
+}
+
+.splitRight {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: calc(27 * var(--w));
+  padding-left: calc(25 * var(--w));
+  border: calc(9 * var(--w)) solid var(--br);
+  border-left: 0;
+  border-radius: 0 calc(25 * var(--w)) calc(25 * var(--w)) 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.splitTexture {
+  position: absolute;
+  left: -55.85%;
+  top: -0.15%;
+  width: 226.59%;
+  height: auto;
+  max-width: none;
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.splitBars {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(44 * var(--w));
+  height: calc(var(--bh) * var(--w));
+}
+
+.splitBars img {
+  flex: none;
+  width: calc(var(--bh) * var(--w));
+  height: calc(44 * var(--w));
+  transform: rotate(90deg);
+}
+
+.splitBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: calc(27 * var(--w));
+  padding-right: calc(30 * var(--w));
+}
+
+.splitBodyNoBars {
+  gap: calc(15 * var(--w));
+  padding-left: calc(19 * var(--w));
+}
+
+.splitTitle {
+  max-width: calc(434 * var(--w));
+  font-size: calc(40 * var(--w));
+  line-height: 0.928;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.splitTitleLg {
+  font-size: calc(45.887 * var(--w));
+  line-height: normal;
+  text-transform: none;
+}
+
+.splitText {
+  max-width: calc(565 * var(--w));
+  font-weight: 500;
+  font-size: calc(19.701 * var(--w));
+  line-height: 1.19;
+  color: var(--ink);
+}
+
+.splitTag {
+  font-weight: 600;
+  font-size: calc(23 * var(--w));
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.splitRight .btn {
+  --u: var(--w);
+}
+
+/* ==================================================================
+   FAQ
+   ================================================================== */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: min(858.533px, 100%);
+}
+
+.faqItem {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.faqQ {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9.066px 36.263px;
+  border-radius: 73.433px;
+  font-size: 34.747px;
+  line-height: 1.39;
+  color: var(--ink);
+  background: #fff;
+  box-shadow: 9.066px 8.159px 0 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faqQ::-webkit-details-marker {
+  display: none;
+}
+
+.faqQ:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.faqItem[data-tone="red"] .faqQ {
+  background: var(--red);
+  color: #fff;
+}
+
+.faqItem[data-tone="dark"] .faqQ {
+  background: var(--ink);
+  color: #fff;
+}
+
+.faqItem[data-tone="blue"] .faqQ {
+  background: var(--blue);
+  color: #fff;
+}
+
+.faqItem[data-tone="teal"] .faqQ {
+  background: var(--teal);
+}
+
+.faqChevron {
+  flex: 0 0 auto;
+  width: 19.945px;
+  height: 16.318px;
+  margin-right: -7px;
+  transition: transform 0.2s ease;
+}
+
+.faqItem:not([open]) .faqChevron {
+  transform: rotate(180deg);
+}
+
+.faqA {
+  padding: 31px 38px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.faqA p {
+  max-width: 780px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* ==================================================================
+   Icon items + teal panel
+   ================================================================== */
+.iconItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  width: var(--iw);
+}
+
+.iconBox {
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--ib);
+  height: var(--ib);
+}
+
+.iconIn {
+  position: absolute;
+}
+
+.iconLabel {
+  font-weight: 700;
+  font-size: 14.746px;
+  line-height: normal;
+  text-align: center;
+  color: #2b3036;
+}
+
+.tealPanel {
+  position: relative;
+  border: 6px solid #fff;
+  border-radius: var(--radius);
+  background: var(--teal);
+  filter: drop-shadow(10px 9px 0 rgba(0, 0, 0, 0.12));
+  overflow: hidden;
+}
+
+.tealOverlay {
+  object-fit: cover;
+  opacity: 0.23;
+  mix-blend-mode: overlay;
+}
+
+.tealInner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+/* ==================================================================
+   Section heading
+   ================================================================== */
+.sectionHeading {
+  font-size: 65px;
+  line-height: 1.057;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+/* ==================================================================
+   Mobile
+   ================================================================== */
+@media (max-width: 900px) {
+  .cardWrap {
+    margin-top: 16px;
+  }
+
+  .cardWrap[data-clip] {
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  .card {
+    min-height: 0;
+    border-radius: var(--radius);
+    border: 1px solid #ededed;
+  }
+
+  .texture {
+    display: none;
+  }
+
+  .cardContent {
+    padding: 24px 18px 28px;
+  }
+
+  .sparkTitle {
+    padding: 52px 0 0 56px;
+  }
+
+  .spark {
+    left: 6px;
+    top: 22px;
+    width: 96px;
+    height: 51.2px;
+  }
+
+  .sparkText {
+    font-size: clamp(38px, 10vw, 52px);
+    white-space: normal;
+  }
+
+  .btn {
+    width: auto;
+    min-width: 200px;
+    padding: 11px 22px;
+    font-size: 17px;
+  }
+
+  .btnWide {
+    width: auto;
+  }
+
+  .scenicContent {
+    gap: 32px;
+  }
+
+  .split {
+    height: auto;
+    flex-direction: column;
+    filter: none;
+    box-shadow: var(--shadow-offset);
+    border-radius: var(--radius);
+  }
+
+  .splitLeft {
+    width: 100%;
+    height: 220px;
+    border: 6px solid var(--bl);
+    border-bottom: 0;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .splitBlock {
+    padding: 20px;
+  }
+
+  .splitBlockTitle {
+    max-width: none;
+    font-size: 34px;
+  }
+
+  .splitRight {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 22px 18px 26px;
+    border: 6px solid var(--br);
+    border-top: 0;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+
+  .splitBars {
+    width: 200px;
+    height: 26px;
+  }
+
+  .splitBars img {
+    width: 200px;
+    height: 26px;
+    transform: none;
+  }
+
+  .splitBody,
+  .splitBodyNoBars {
+    gap: 14px;
+    padding: 0;
+  }
+
+  .splitTitle {
+    max-width: none;
+    font-size: 30px;
+  }
+
+  .splitTitleLg {
+    font-size: 32px;
+  }
+
+  .splitText {
+    max-width: none;
+    font-size: 17px;
+  }
+
+  .splitTag {
+    font-size: 19px;
+  }
+
+  .faq,
+  .faqItem {
+    gap: 16px;
+  }
+
+  .faqQ {
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 22px;
+  }
+
+  .faqChevron {
+    width: 16px;
+    height: 13px;
+    margin-right: 0;
+  }
+
+  .faqA {
+    padding: 18px 20px;
+  }
+
+  .faqA p {
+    font-size: 17px;
+  }
+
+  .iconItem {
+    width: calc(50% - 8px);
+    gap: 10px;
+  }
+
+  .iconLabel {
+    font-size: 13.5px;
+  }
+
+  .tealPanel {
+    border-width: 5px;
+    filter: none;
+    box-shadow: var(--shadow-offset);
+  }
+
+  .tealInner {
+    padding: 28px 16px;
+  }
+
+  .sectionHeading {
+    font-size: 40px;
+  }
+}
+
+/* ==================================================================
+   Card content helpers (used by most internal pages)
+   ================================================================== */
+.heroRow {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(77 * var(--u));
+  align-self: flex-start;
+  margin-left: calc(75 * var(--u));
+  margin-top: calc(var(--row-mt, 55) * var(--u));
+}
+
+.figure {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(487 * var(--u));
+  height: calc(var(--fh) * var(--u));
+}
+
+.figurePill {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: calc(38.095 * var(--u));
+}
+
+.figurePhoto {
+  position: absolute;
+  overflow: hidden;
+}
+
+.figurePhoto img {
+  object-fit: cover;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  width: calc(631 * var(--u));
+}
+
+.lead {
+  font-weight: 500;
+  font-size: calc(25 * var(--u, 1px));
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.lead strong {
+  color: #008ba2;
+  font-weight: 700;
+}
+
+.leadCenter {
+  text-align: center;
+}
+
+.intro {
+  max-width: 802px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--ink);
+}
+
+.btnRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(20 * var(--u, 1px));
+}
+
+@media (max-width: 900px) {
+  .heroRow {
+    flex-direction: column;
+    align-items: stretch;
+    align-self: stretch;
+    gap: 24px;
+    margin: 24px 0 0;
+  }
+
+  .figure {
+    width: 100%;
+    max-width: 487px;
+    height: auto;
+    aspect-ratio: 487 / var(--fh);
+    align-self: center;
+  }
+
+  .heroText {
+    width: 100%;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .btnRow {
+    gap: 12px;
+    justify-content: center;
+  }
+}
+
+/* Footer inside a scenic section: the section gap already provides the spacing */
+.scenicContent > :global(footer) {
+  margin-top: 0;
+}

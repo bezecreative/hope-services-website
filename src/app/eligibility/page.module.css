@@ -1,0 +1,102 @@
+.title {
+  align-self: flex-start;
+  margin-left: calc(141 * var(--u));
+  max-width: calc(1175 * var(--u));
+}
+
+.pill {
+  top: calc(123.64 * var(--u));
+  height: calc(207.933 * var(--u));
+  background: var(--teal);
+}
+
+.photo {
+  inset: 0;
+  border-radius: calc(37 * var(--u));
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+  padding: 10px 0 30px;
+}
+
+.block2 {
+  padding-bottom: 0;
+}
+
+.btns {
+  justify-content: center;
+}
+
+.scenic {
+  --pt: 50px;
+  margin-top: 0;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.faqTitle {
+  --u: min(1px, 100cqw / 1440);
+  align-self: flex-start;
+  margin-left: calc(50% - 569px);
+  max-width: calc(1137 * var(--u));
+}
+
+@media (max-width: 1240px) {
+  .faqTitle {
+    align-self: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .title {
+    align-self: stretch;
+    margin-left: 0;
+    max-width: none;
+  }
+
+  .pill {
+    top: 40%;
+    height: 60%;
+  }
+
+  .block {
+    margin-top: 32px;
+    padding: 0;
+    gap: 16px;
+  }
+
+  .scenic {
+    --pt: 36px;
+  }
+
+  .blocks {
+    gap: 24px;
+  }
+
+  .faqSection {
+    gap: 28px;
+  }
+
+  .faqTitle {
+    align-self: stretch;
+    max-width: none;
+  }
+}

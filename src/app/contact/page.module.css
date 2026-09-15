@@ -1,0 +1,39 @@
+.lead {
+  width: calc(1209 * var(--u));
+  margin-top: calc(72 * var(--u));
+}
+
+.scenic {
+  --pt: 50px;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  scroll-margin-top: 24px;
+}
+
+.alt {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.alt a:hover,
+.alt a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .lead {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .scenic {
+    --pt: 70px;
+  }
+}

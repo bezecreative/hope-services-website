@@ -1,0 +1,55 @@
+.pill {
+  bottom: 0;
+  height: calc(207.933 * var(--u));
+  background: var(--teal);
+}
+
+.photo {
+  left: calc(6 * var(--u));
+  top: calc(-75 * var(--u));
+  width: calc(481 * var(--u));
+  height: calc(282 * var(--u));
+  border-radius: calc(39 * var(--u));
+}
+
+.btns {
+  margin-top: calc(31 * var(--u));
+}
+
+.scenic {
+  --pt: 12px;
+}
+
+.feature {
+  display: flex;
+  justify-content: center;
+}
+
+.featureLink:hover,
+.featureLink:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .pill {
+    height: 62%;
+  }
+
+  .photo {
+    left: 1%;
+    top: -8%;
+    width: 98%;
+    height: 85%;
+    border-radius: 24px;
+  }
+
+  .btns {
+    margin-top: 20px;
+  }
+
+  .scenic {
+    --pt: 20px;
+  }
+}

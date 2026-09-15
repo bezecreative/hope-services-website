@@ -1,0 +1,222 @@
+.letter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(47 * var(--u));
+  width: calc(1210 * var(--u));
+  margin-top: calc(58 * var(--u));
+  padding-bottom: calc(40 * var(--u));
+}
+
+.letterRow {
+  display: flex;
+  align-items: center;
+  gap: calc(79 * var(--u));
+}
+
+.letterRow > p {
+  width: calc(708 * var(--u));
+}
+
+.letterCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: calc(423.158 * var(--u));
+  height: calc(216 * var(--u));
+  border: calc(10.105 * var(--u)) solid #fff;
+  border-radius: calc(31.579 * var(--u));
+  background: var(--ink);
+  box-shadow: calc(12.632 * var(--u)) calc(11.368 * var(--u)) 0 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.letterBg {
+  object-fit: cover;
+  opacity: 0.13;
+}
+
+.letterTitle {
+  position: relative;
+  font-size: calc(56.842 * var(--u));
+  line-height: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.letterBody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.scenic {
+  --pt: 50px;
+}
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 57px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 365.957px);
+  gap: 24px 27.891px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 469.913px;
+  padding: 27.891px 27px;
+  background: #fff;
+  border: 0.845px solid var(--line);
+  border-radius: 21.129px;
+  box-shadow: 8.452px 7.607px 0 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.cardTexture {
+  position: absolute;
+  left: -55.97%;
+  top: 3.34%;
+  width: 226.59%;
+  height: auto;
+  max-width: none;
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.cardInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10.987px;
+}
+
+.cardPhoto {
+  position: relative;
+  width: 309.331px;
+  height: 254.395px;
+  border-radius: 8.452px;
+  background: #d9d9d9;
+  overflow: hidden;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10.987px;
+  padding-top: 12.678px;
+  width: 309.331px;
+}
+
+.cardName {
+  width: 100%;
+  font-size: 33.807px;
+  line-height: 0.928;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.cardBars {
+  width: 230.731px;
+  height: 37.187px;
+  transform: rotate(180deg);
+}
+
+.cardRole {
+  width: 100%;
+  font-weight: 500;
+  font-size: 16.65px;
+  line-height: 1.13;
+  text-align: center;
+  color: var(--ink);
+}
+
+@media (max-width: 1240px) {
+  .grid {
+    grid-template-columns: repeat(2, 365.957px);
+  }
+}
+
+@media (max-width: 900px) {
+  .letter {
+    width: 100%;
+    gap: 22px;
+    margin-top: 24px;
+    padding-bottom: 0;
+  }
+
+  .letterRow {
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .letterRow > p {
+    width: 100%;
+  }
+
+  .letterCard {
+    width: 100%;
+    max-width: 360px;
+    height: 170px;
+    border-width: 8px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-offset);
+  }
+
+  .letterTitle {
+    font-size: 40px;
+  }
+
+  .letterBody {
+    gap: 14px;
+  }
+
+  .scenic {
+    --pt: 32px;
+  }
+
+  .partners {
+    gap: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .card {
+    height: auto;
+    padding: 22px 18px;
+  }
+
+  .cardInner {
+    width: 100%;
+  }
+
+  .cardPhoto {
+    width: 100%;
+    height: 260px;
+  }
+
+  .cardText {
+    width: 100%;
+  }
+
+  .cardName {
+    font-size: 30px;
+  }
+}

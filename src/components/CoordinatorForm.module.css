@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18.81px;
+  width: min(1087px, 100%);
+}
+
+.group {
+  width: 100%;
+}
+
+.submit {
+  align-self: center;
+}
