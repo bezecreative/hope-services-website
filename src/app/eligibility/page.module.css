@@ -24,10 +24,6 @@
   padding: 10px 0 30px;
 }
 
-.block2 {
-  padding-bottom: 0;
-}
-
 .btns {
   justify-content: center;
 }
@@ -35,13 +31,6 @@
 .scenic {
   --pt: 50px;
   margin-top: 0;
-}
-
-.blocks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
 }
 
 .faqSection {
@@ -85,10 +74,6 @@
 
   .scenic {
     --pt: 36px;
-  }
-
-  .blocks {
-    gap: 24px;
   }
 
   .faqSection {

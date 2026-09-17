@@ -239,7 +239,7 @@ export function FaqList({ items, id }: { items: FaqItem[]; id?: string }) {
         const tone = TONES[i % TONES.length];
         const darkChevron = tone === "white" || tone === "teal";
         return (
-          <details key={it.q} className={s.faqItem} data-tone={tone} open>
+          <details key={it.q} className={s.faqItem} data-tone={tone}>
             <summary className={cx("display", s.faqQ)}>
               <span>{it.q}</span>
               <Image src={darkChevron ? "/icons/chevron-dark.svg" : "/icons/chevron-white.svg"} alt="" width={19.945} height={16.318} className={s.faqChevron} />

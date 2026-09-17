@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import VideoBlock from "@/components/VideoBlock";
 import { ROUTES, SITE, SITE_URL } from "@/lib/site";
 import s from "./page.module.css";
 
@@ -200,11 +201,7 @@ export default function HomePage() {
         <div className={s.lower}>
           {/* ─────────── VIDEO ─────────── */}
           <section className={`container ${s.videoSection}`} aria-label="Video">
-            <div className={s.video} role="img" aria-label="Video coming soon">
-              <svg className={s.play} viewBox="0 0 54 63" width="54" height="63" aria-hidden="true">
-                <path d="M54 31.18 0 62.35V0Z" fill="#8B8B8B" />
-              </svg>
-            </div>
+            <VideoBlock />
           </section>
 
           <div className={s.scenic}>
@@ -263,15 +260,17 @@ export default function HomePage() {
                     </h2>
                     <ul className={s.whyGrid}>
                       {WHY_ITEMS.map((item) => (
-                        <li key={item.icon} className={s.whyItem} style={{ ["--col" as string]: item.col }}>
-                          <Image
-                            src={`/icons/${item.icon}.svg`}
-                            alt=""
-                            width={item.w}
-                            height={item.h}
-                            className={s.whyIcon}
-                            style={{ ["--iw" as string]: item.w, ["--ih" as string]: item.h }}
-                          />
+                        <li key={item.icon} className={s.whyItem}>
+                          <span className={s.whyIconBox}>
+                            <Image
+                              src={`/icons/${item.icon}.svg`}
+                              alt=""
+                              width={item.w}
+                              height={item.h}
+                              className={s.whyIcon}
+                              style={{ ["--iw" as string]: item.w, ["--ih" as string]: item.h }}
+                            />
+                          </span>
                           <span className={s.whyText}>{item.text}</span>
                         </li>
                       ))}
@@ -294,7 +293,7 @@ export default function HomePage() {
                     quality={70}
                   />
                   <div className={s.tInner}>
-                    <h3 className={`display ${s.tTitle}`} style={{ maxWidth: t.titleWidth }}>
+                    <h3 className={`display ${s.tTitle}`} style={{ maxWidth: `calc(${t.titleWidth} * var(--t))` }}>
                       {t.title}
                     </h3>
                     <Image

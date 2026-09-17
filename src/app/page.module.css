@@ -240,23 +240,6 @@
   margin-top: 1px;
 }
 
-.video {
-  position: relative;
-  width: min(1214px, 100%);
-  aspect-ratio: 1214 / 616;
-  display: grid;
-  place-items: center;
-  background: var(--card-gray);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-offset);
-}
-
-.play {
-  width: 54px;
-  height: 63px;
-}
-
 /* Scenic background wrapper (CTA → footer) */
 .scenic {
   position: relative;
@@ -456,10 +439,10 @@
 }
 
 .whyGrid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, calc(168 * var(--w)));
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: calc(20 * var(--w)) calc(14 * var(--w));
   width: 100%;
 }
@@ -468,9 +451,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
   gap: calc(15 * var(--w));
-  width: calc(var(--col) * var(--w));
+}
+
+.whyIconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(58.06 * var(--w));
 }
 
 .whyIcon {
@@ -486,32 +474,32 @@
   color: #2b3036;
 }
 
-/* ---------- Testimonials ---------- */
+/* ---------- Testimonials (3-up; scales with the row width, --t = 1 design px) ---------- */
 .testimonials {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 381px));
   justify-content: center;
   align-items: stretch;
-  gap: 33px;
+  gap: clamp(12px, 2.4vw, 33px);
   margin-top: 40px;
-  padding: 0 10px;
 }
 
 .tCard {
+  --t: min(1px, 100cqw / 1208);
   position: relative;
-  width: 381px;
-  min-height: 520px;
+  min-height: calc(520 * var(--t));
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20.762px 20px;
+  padding: calc(20.762 * var(--t)) calc(20 * var(--t));
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-offset);
+  border-radius: max(calc(25 * var(--t)), 16px);
+  box-shadow: max(calc(10 * var(--t)), 6px) max(calc(9 * var(--t)), 5px) 0 0 rgba(0, 0, 0, 0.12);
   overflow: hidden;
 }
 
@@ -528,7 +516,8 @@
 
 .tTextureFlip {
   left: -71.67%;
-  top: -218.23%;
+  top: auto;
+  bottom: -0.15%;
   transform: rotate(180deg);
 }
 
@@ -537,38 +526,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 13.36px;
+  gap: calc(13.36 * var(--t));
   width: 100%;
 }
 
 .tTitle {
-  font-size: 40px;
+  max-width: 100%;
+  font-size: max(calc(40 * var(--t)), 21px);
   line-height: 0.92765;
   text-align: center;
   color: var(--ink);
 }
 
 .tStars {
-  width: 261.638px;
-  height: 42.751px;
+  width: calc(261.638 * var(--t));
+  min-width: 130px;
+  height: auto;
 }
 
 .tQuote {
   margin: 0;
-  width: 287.235px;
+  width: calc(287.235 * var(--t));
+  min-width: min(100%, 190px);
   max-width: 100%;
   font-weight: 500;
-  font-size: 19.701px;
+  font-size: max(calc(19.701 * var(--t)), 13px);
   line-height: 1.13065;
   text-align: center;
   color: var(--ink);
 }
 
 .tName {
-  width: 287.235px;
   max-width: 100%;
   font-weight: 700;
-  font-size: 25px;
+  font-size: max(calc(25 * var(--t)), 16px);
   line-height: 1.131;
   text-align: center;
   color: var(--ink);
@@ -700,15 +691,6 @@
     margin-top: 24px;
   }
 
-  .video {
-    border-radius: 18px;
-  }
-
-  .play {
-    width: 36px;
-    height: 42px;
-  }
-
   .scenic {
     margin-top: 40px;
   }
@@ -792,12 +774,15 @@
   }
 
   .whyGrid {
-    gap: 20px 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .whyItem {
-    width: calc(50% - 7px);
     gap: 10px;
+  }
+
+  .whyIconBox {
+    height: 58px;
   }
 
   .whyIcon {
@@ -828,5 +813,37 @@
 
   .tQuote {
     font-size: 18px;
+  }
+}
+
+/* Reviews stack only on phones */
+@media (max-width: 700px) {
+  .testimonials {
+    grid-template-columns: minmax(0, 420px);
+    gap: 22px;
+    margin-top: 28px;
+  }
+
+  .tCard {
+    --t: 1px;
+    min-height: 0;
+    padding: 28px 18px;
+  }
+
+  .tTitle {
+    font-size: 34px;
+  }
+
+  .tStars {
+    width: 240px;
+  }
+
+  .tQuote {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .tName {
+    font-size: 24px;
   }
 }

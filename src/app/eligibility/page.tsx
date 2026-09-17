@@ -1,29 +1,20 @@
 import Image from "next/image";
-import { PageBand, SparkTitle, Btn, Scenic, SplitCard, SplitBlock, FaqList, SectionHeading, blocks as b, cx } from "@/components/blocks";
+import { PageBand, SparkTitle, Btn, Scenic, FaqList, SectionHeading, blocks as b, cx } from "@/components/blocks";
 import SiteFooter from "@/components/SiteFooter";
 import { pageMetadata, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { FAQ_ITEMS, faqJsonLd } from "@/lib/faq";
 import { ROUTES } from "@/lib/site";
 import s from "./page.module.css";
 import groupPhoto from "../../../public/images/elig-group.webp";
-import lake from "../../../public/images/block-lake.jpg";
-import leaves from "../../../public/images/block-leaves.jpg";
-import plants from "../../../public/images/block-plants.jpg";
 
 export const metadata = pageMetadata({
   title: "Eligibility",
   description:
-    "Learn how to qualify for Hope Services supported living in Idaho: DD waiver and Medicaid requirements, eligible disabilities including autism, DD/ID, and injury, plus answers to common questions.",
+    "Learn how to qualify for Hope Services supported living in Idaho: DD waiver and Medicaid requirements, how to get started, and answers to the most common eligibility questions.",
   path: ROUTES.eligibility,
 });
 
 const IDHW_URL = "https://healthandwelfare.idaho.gov/services-programs/medicaid-health/developmental-disabilities-services";
-
-const BLOCKS = [
-  { title: "AUTISM (ASD)", color: "#404850", image: lake, opacity: 0.21, dark: false, text: "Autism, or autism spectrum disorder (ASD), is a developmental disability that affects how a person communicates, interacts socially, and experiences the world. Individuals with autism may have differences in understanding social cues, expressing themselves verbally, or engaging in repetitive behaviors. Because autism exists on a spectrum, each person has their own unique strengths, abilities, and challenges." },
-  { title: "Developmental (DD) and Intellectual Disabilities (ID)", color: "#86c7bb", image: leaves, opacity: 0.15, dark: true, text: "Developmental disabilities and intellectual disabilities are often used interchangeably, but they are not the same. Intellectual disabilities specifically involve limitations in intellectual functioning—such as learning, reasoning, and problem-solving—and in adaptive skills like communication and social interaction. Developmental disabilities is a broader term that includes intellectual disabilities as well as other conditions that affect physical, cognitive, or emotional development." },
-  { title: "Injury", color: "#ef4a5f", image: plants, opacity: 0.22, dark: false, text: "Individuals who have experienced a significant injury may qualify for services if the injury has created lasting physical, cognitive, or daily living support needs. Eligibility is reviewed based on the person’s condition, documentation, and the level of assistance needed to live safely and independently." },
-];
 
 export default function EligibilityPage() {
   return (
@@ -65,24 +56,8 @@ export default function EligibilityPage() {
           </div>
         </section>
 
-        <section className={cx("container", s.block, s.block2)} aria-labelledby="eligible">
-          <SectionHeading id="eligible">Eligible Disabilities</SectionHeading>
-          <p className={b.intro}>
-            Hope Services may support individuals with qualifying developmental, intellectual, neurological, or
-            brain-related disabilities. Each person&rsquo;s needs are unique, so eligibility is reviewed individually based
-            on diagnosis, documentation, and support goals.
-          </p>
-        </section>
 
-        <Scenic stripes={[-210, 239]} className={s.scenic}>
-          <section className={cx("container", s.blocks)} aria-label="Eligible disability types">
-            {BLOCKS.map((blk) => (
-              <SplitCard key={blk.title} height={284} bars={235} left={<SplitBlock color={blk.color} image={blk.image} opacity={blk.opacity} dark={blk.dark}>{blk.title}</SplitBlock>}>
-                <p className={b.splitText}>{blk.text}</p>
-              </SplitCard>
-            ))}
-          </section>
-
+        <Scenic className={s.scenic}>
           <section className={cx("container", s.faqSection)} aria-labelledby="faq-title">
             <SparkTitle as="h2" id="faq-title" wrap className={s.faqTitle}>
               FREQUENTLY ASKED ELIGIBILITY QUESTIONS

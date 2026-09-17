@@ -404,7 +404,7 @@
   transition: transform 0.2s ease;
 }
 
-.faqItem:not([open]) .faqChevron {
+.faqItem[open] .faqChevron {
   transform: rotate(180deg);
 }
 
